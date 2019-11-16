@@ -3,8 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom";
+import Quiz from './Quiz.js';
 
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
@@ -24,10 +26,7 @@ export default function BasicExample() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/quiz/10/17">Quiz</Link>
           </li>
         </ul>
 
@@ -44,20 +43,14 @@ export default function BasicExample() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/quiz/:start/:end">
+            <QuizPath />
           </Route>
         </Switch>
       </div>
     </Router>
   );
 }
-
-// You can think of these components as "pages"
-// in your app.
 
 function Home() {
   return (
@@ -67,18 +60,10 @@ function Home() {
   );
 }
 
-function About() {
+function QuizPath() {
+  let { start, end } = useParams();
   return (
-    <div>
-      <h2>About</h2>
-    </div>
+    <Quiz start={start} end={end}/>
   );
 }
 
-function Dashboard() {
-  return (
-    <div>
-      <h2>Dashboard</h2>
-    </div>
-  );
-}

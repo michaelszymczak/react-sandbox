@@ -20,3 +20,16 @@
 .App-link {
   color: #09d3ac;
 }
+
+.App .q {
+    font-size: 3em;
+}
+
+.App .a {
+    font-size: 2em;
+}
+
+.App .show, .App .okAnswer, .App .wrongAnswer {
+  font-size: 3em;
+  margin: 1em 1em;
+}

@@ -33,8 +33,7 @@ class Main extends React.Component {
               {curr.kanji} <br/>
               {curr.keyword} <br/>
             </header>
-          </div>
-
+      </div>
     );
   }
 }
