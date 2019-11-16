@@ -15,7 +15,8 @@ class Main extends React.Component {
 
     this.prepareNew = (firstId, lastId) => {
         this.setState({
-        queue: db.entries(1001, 1100)})
+            queue: db.entries(5, 7)
+        })
     }
 
 
