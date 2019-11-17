@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   useParams
 } from "react-router-dom";
 
@@ -33,13 +32,6 @@ function HomePath() {
   );
 }
 
-function setStart(foo) {
-  alert(foo);
-}
-
-function setEnd(foo) {
-  alert(foo);
-}
 
 function QuizPath() {
   let { start, end } = useParams();
