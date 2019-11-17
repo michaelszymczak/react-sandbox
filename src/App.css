@@ -36,7 +36,9 @@
 
 .App-body .show, .App .okAnswer, .App .wrongAnswer {
   font-size: 1.5em;
-  margin: 1em 1em;
+  margin: 1em 0.2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 .App-body .okAnswer {

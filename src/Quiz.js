@@ -1,5 +1,6 @@
 import React from "react";
 import './App.css';
+import { Link } from "react-router-dom";
 import { Content } from './Content';
 const { List } = require('immutable');
 
@@ -53,7 +54,12 @@ class Quiz extends React.Component {
       const curr = questions.next();
       if (finished) {
       return (
+      <div className="App">
+                <div className="App-body">
               <h1>Done</h1>
+              <Link className="linkStart" to="/"> Again </Link>
+              </div>
+              </div>
             )
       }
 
@@ -72,7 +78,7 @@ class Quiz extends React.Component {
             :
             <div>
             <div className="a"> ... </div>
-            <button className="show" onClick={this.showResult}> SHOW </button>
+            <button className="show" onClick={this.showResult}> SHOW ANSWER </button>
             </div>
           }
 
