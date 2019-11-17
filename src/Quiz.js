@@ -23,7 +23,7 @@ function questions(initialQueue)
   };
 }
 
-class Quiz extends React.Component {
+export default class Quiz extends React.Component {
     constructor(props) {
         super(props);
 
@@ -93,5 +93,3 @@ class Quiz extends React.Component {
 
     }
 }
-
-export default Quiz;

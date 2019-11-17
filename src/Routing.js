@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Quiz from './Quiz.js';
+import Home from './Home.js';
 
 export default function Routing() {
   return (
@@ -15,7 +16,7 @@ export default function Routing() {
       <div>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <HomePath />
           </Route>
           <Route path="/quiz/:start/:end">
             <QuizPath />
@@ -26,12 +27,18 @@ export default function Routing() {
   );
 }
 
-function Home() {
+function HomePath() {
   return (
-    <div className="App-body">
-      <Link className="linkStart" to="/quiz/10/17"> QUIZ </Link>
-    </div>
+    <Home />
   );
+}
+
+function setStart(foo) {
+  alert(foo);
+}
+
+function setEnd(foo) {
+  alert(foo);
 }
 
 function QuizPath() {
