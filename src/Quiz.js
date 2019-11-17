@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css';
 import { Content } from './Content';
+const { List } = require('immutable');
 
 function questions(initialQueue)
 {
@@ -9,14 +10,15 @@ function questions(initialQueue)
 
   return {
     answeredCorrect: () => {
-      return questions(queue); // TODO
+      return questions(queue.shift());
     },
     answeredWrong: () => {
-          return questions(queue); // TODO
+          const element = queue.first();
+          return questions(queue.shift().push(element));
     },
-    next: () => queue[0],
-    hasNext: () => queue.length > 0,
-    remainCount: () => queue.length
+    next: () => queue.first(),
+    hasNext: () => !queue.isEmpty(),
+    remainCount: () => queue.size
   };
 }
 
@@ -25,7 +27,7 @@ class Quiz extends React.Component {
         super(props);
 
         const db = Content();
-        const entries = db.entries(parseInt(props.start), parseInt(props.end));
+        const entries = List(db.entries(parseInt(props.start), parseInt(props.end))).sortBy(Math.random);
 
         this.state = {
           questions: questions(entries),
