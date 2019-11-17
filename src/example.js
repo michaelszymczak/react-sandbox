@@ -6,6 +6,7 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+
 import Quiz from './Quiz.js';
 
 // This site has 3 pages, all of which are rendered
@@ -21,17 +22,6 @@ export default function BasicExample() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/quiz/10/17">Quiz</Link>
-          </li>
-        </ul>
-
-        <hr />
-
         {/*
           A <Switch> looks through all its children <Route>
           elements and renders the first one whose path
@@ -54,8 +44,10 @@ export default function BasicExample() {
 
 function Home() {
   return (
-    <div>
-      <h2>Home</h2>
+    <div className="App-body">
+      <Link className="linkStart" to="/quiz/10/17"> QUIZ </Link>
+
+
     </div>
   );
 }

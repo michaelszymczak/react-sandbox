@@ -6,7 +6,7 @@
   height: 40vmin;
 }
 
-.App-header {
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -21,15 +21,30 @@
   color: #09d3ac;
 }
 
-.App .q {
+.App-body .q {
     font-size: 3em;
 }
 
-.App .a {
+.App-body .a {
     font-size: 2em;
 }
 
-.App .show, .App .okAnswer, .App .wrongAnswer {
-  font-size: 3em;
+.App-body a.linkStart {
+    font-size: 5em;
+    color: White;
+}
+
+.App-body .show, .App .okAnswer, .App .wrongAnswer {
+  font-size: 1.5em;
   margin: 1em 1em;
+}
+
+.App-body .okAnswer {
+  background-color: Green;
+  border-color: Green;
+}
+
+.App-body .wrongAnswer {
+  background-color: Red;
+  border-color: Red;
 }

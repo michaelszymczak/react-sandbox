@@ -60,28 +60,27 @@ class Quiz extends React.Component {
 
       return (
         <div>
-
-            <h2>Quiz, start: {this.props.start}, end: {this.props.end}, current: {curr.id}, remain: {questions.remainCount()}</h2>
-
           <div className="App">
-          <header className="App-header">
+          <div className="App-body">
           <div className="q">{curr.kanji}</div>
           { this.state.showResult ?
             <div>
             <div className="a"> {curr.keyword} </div>
             <button className="okAnswer" onClick={this.correctAnswer}> CORRECT </button>
-            <button className="wrongAnswer" onClick={this.wrongAnswer}> INCORRECT </button>
+            <button className="wrongAnswer" onClick={this.wrongAnswer}> WRONG </button>
             </div>
             :
             <div>
-            <button className="show" onClick={this.showResult}> Show </button>
+            <div className="a"> ... </div>
+            <button className="show" onClick={this.showResult}> SHOW </button>
             </div>
           }
 
 
-          </header>
+          </div>
 
           </div>
+          <h2>Quiz, start: {this.props.start}, end: {this.props.end}, current: {curr.id}, remain: {questions.remainCount()}</h2>
         </div>
       );
 
