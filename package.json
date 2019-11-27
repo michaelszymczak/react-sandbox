@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage" : "https://michaelszymczak.github.io/react-sandbox",
+  "homepage" : "http://michaelszymczak.github.io/react-sandbox/",
   "private": true,
   "dependencies": {
     "immutable": "^4.0.0-rc.12",
