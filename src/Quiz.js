@@ -2,26 +2,8 @@ import React from "react";
 import './App.css';
 import { Link } from "react-router-dom";
 import { Content } from './Content';
+import questions from './questions';
 const { List } = require('immutable');
-
-function questions(initialQueue)
-{
-  const queue = initialQueue;
-  console.log(queue);
-
-  return {
-    answeredCorrect: () => {
-      return questions(queue.shift());
-    },
-    answeredWrong: () => {
-          const element = queue.first();
-          return questions(queue.shift().push(element));
-    },
-    next: () => queue.first(),
-    hasNext: () => !queue.isEmpty(),
-    remainCount: () => queue.size
-  };
-}
 
 export default class Quiz extends React.Component {
     constructor(props) {
